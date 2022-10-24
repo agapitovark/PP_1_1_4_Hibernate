@@ -1,5 +1,10 @@
 package jm.task.core.jdbc.util;
 
+import jm.task.core.jdbc.model.User;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -24,6 +29,12 @@ public class Util implements AutoCloseable {
         }
         return localInstance;
     }
+//    SessionFactory factory = new Configuration().
+//            configure("hibernate.cfg.xml")
+//            .addAnnotatedClass(User.class).buildSessionFactory();
+//    Session session = factory.getCurrentSession();
+
+
 
     public static Connection getConnection(){
         Connection connection = null;
